@@ -61,7 +61,8 @@ int gpio_init(gpio_t pin, gpio_mode_t mode)
     CMU_ClockEnable(cmuClock_GPIO, true);
 
     /* configure pin */
-    GPIO_PinModeSet(_port_num(pin), _pin_num(pin), mode >> 1, mode & 0x1);
+    GPIO_PinModeSetExt(_port_num(pin), _pin_num(pin),
+                       mode >> 1, mode & 0x1, mode != GPIO_OUT);
 #ifdef _SILICON_LABS_32B_SERIES_0
     GPIO_DriveModeSet(_port_num(pin), gpioDriveModeStandard);
 #endif
