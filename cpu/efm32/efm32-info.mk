@@ -20,15 +20,14 @@ endif
 
 # Parse the information into EFM32 specific variables. They are specific to the
 # EFM32 CPU only, and should not be used outside this module.
-EFM32_FAMILY = $(word 1, $(EFM32_INFO))
-EFM32_SERIES = $(word 2, $(EFM32_INFO))
-EFM32_ARCHITECTURE = $(word 3, $(EFM32_INFO))
+EFM32_SERIES = $(word 1, $(EFM32_INFO))
+EFM32_ARCHITECTURE = $(word 2, $(EFM32_INFO))
 
-EFM32_FLASH_START = $(word 4, $(EFM32_INFO))
-EFM32_FLASH_SIZE = $(word 5, $(EFM32_INFO))
-EFM32_SRAM_START = $(word 6, $(EFM32_INFO))
-EFM32_SRAM_SIZE = $(word 7, $(EFM32_INFO))
+EFM32_FLASH_START = $(word 3, $(EFM32_INFO))
+EFM32_FLASH_SIZE = $(word 4, $(EFM32_INFO))
+EFM32_SRAM_START = $(word 5, $(EFM32_INFO))
+EFM32_SRAM_SIZE = $(word 6, $(EFM32_INFO))
 
-EFM32_CRYPTO = $(word 8, $(EFM32_INFO))
-EFM32_TRNG = $(word 9, $(EFM32_INFO))
-EFM32_RADIO = $(word 10, $(EFM32_INFO))
+EFM32_CRYPTO = $(word 7, $(EFM32_INFO))
+EFM32_TRNG = $(word 8, $(EFM32_INFO))
+EFM32_RADIO = $(word 9, $(EFM32_INFO))
